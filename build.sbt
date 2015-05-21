@@ -24,6 +24,22 @@ resolvers ++= Seq(
   "sbt-plugin repository" at "https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/"
 )
 
+libraryDependencies ++= {
+  val akkaVersion = "2.3.11"
+  val akkaHttpVersion = "1.0-RC2"
+  Seq(
+    "com.typesafe.akka" %% "akka-actor" % akkaVersion,
+    "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
+    "com.typesafe.akka" %% "akka-contrib" % akkaVersion,
+    "com.typesafe.akka" %% "akka-http-core-experimental" % akkaHttpVersion,
+    "com.typesafe.akka" %% "akka-http-scala-experimental" % akkaHttpVersion,
+    "com.typesafe.akka" %% "akka-http-testkit-scala-experimental" % akkaHttpVersion % "test",
+    "com.typesafe.akka" %% "akka-multi-node-testkit" % akkaVersion,
+    "org.json4s" %% "json4s-jackson" % "3.2.11",
+    "org.scalatest" %% "scalatest" % "2.2.5"
+  )
+}
+
 ivyScala := ivyScala.value map {
   _.copy(overrideScalaVersion = true)
 }
