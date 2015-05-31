@@ -1,8 +1,8 @@
-name := "akka-examples"
-
-version := "1.0"
-
-scalaVersion := "2.11.6"
+lazy val commonSettings = Seq(
+  name := "akka-examples",
+  version := "1.0",
+  scalaVersion := "2.11.6"
+)
 
 javacOptions ++= Seq(
   "-source", "1.8",
@@ -26,16 +26,16 @@ resolvers ++= Seq(
 
 libraryDependencies ++= {
   val akkaVersion = "2.3.11"
-  val akkaHttpVersion = "1.0-RC2"
+  val akkaHttpVersion = "1.0-RC3"
   Seq(
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
     "com.typesafe.akka" %% "akka-contrib" % akkaVersion,
+    "com.typesafe.akka" %% "akka-http-experimental" % akkaHttpVersion,
     "com.typesafe.akka" %% "akka-http-core-experimental" % akkaHttpVersion,
-    "com.typesafe.akka" %% "akka-http-scala-experimental" % akkaHttpVersion,
-    "com.typesafe.akka" %% "akka-http-testkit-scala-experimental" % akkaHttpVersion % "test",
+    "com.typesafe.akka" %% "akka-http-spray-json-experimental" % akkaHttpVersion,
+    "com.typesafe.akka" %% "akka-http-testkit-experimental" % akkaHttpVersion % "test",
     "com.typesafe.akka" %% "akka-multi-node-testkit" % akkaVersion,
-    "org.json4s" %% "json4s-jackson" % "3.2.11",
     "org.scalatest" %% "scalatest" % "2.2.5"
   )
 }
