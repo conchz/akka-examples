@@ -31,6 +31,7 @@ libraryDependencies ++= {
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
     "com.typesafe.akka" %% "akka-contrib" % akkaVersion,
+    "com.typesafe.akka" %% "akka-remote" % akkaVersion,
     "com.typesafe.akka" %% "akka-http-core-experimental" % akkaHttpVersion,
     "com.typesafe.akka" %% "akka-http-experimental" % akkaHttpVersion,
     "com.typesafe.akka" %% "akka-http-jackson-experimental" % akkaHttpVersion,
