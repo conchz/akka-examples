@@ -53,7 +53,7 @@ object ServerBoot {
         }
 
 
-    val server = Http().bindAndHandle(route, "localhost", 8080)
+    val server = Http().bindAndHandle(route, "::0", 8080)
 
     Runtime.getRuntime.addShutdownHook(new Thread() {
       override def run() = server.flatMap(_.unbind()).onComplete(_ ⇒ system.shutdown())
