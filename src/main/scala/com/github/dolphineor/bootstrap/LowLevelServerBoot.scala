@@ -1,4 +1,4 @@
-package org.dolphineor.bootstrap
+package com.github.dolphineor.bootstrap
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
@@ -12,7 +12,7 @@ import scala.concurrent.Future
 /**
  * Created by dolphineor on 2015-6-27.
  */
-object AkkaHttpServerBoot {
+object LowLevelServerBoot {
   def main(args: Array[String]) {
     // the actor system to use. Required for actorMaterializer and HTTP.
     // passed in implicit

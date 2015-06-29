@@ -1,4 +1,4 @@
-package org.dolphineor.extension
+package com.github.dolphineor.extension
 
 /**
  * Created by dolphineor on 2015-6-28.

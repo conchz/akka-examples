@@ -1,4 +1,4 @@
-package org.dolphineor.bootstrap
+package com.github.dolphineor.bootstrap
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
@@ -11,7 +11,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 /**
  * Created by dolphineor on 2015-6-27.
  */
-object ServerBoot {
+object HighLevelServerBoot {
 
   def resolvePath(path: String): String = path match {
     case u if u.contains("hello") => "hello"
