@@ -24,21 +24,16 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= {
-  val akkaVersion = "2.3.11"
+  val akkaVersion = "2.3.12"
   val akkaHttpVersion = "1.0-RC4"
   Seq(
-    "org.scala-lang.modules" %% "scala-xml" % "1.0.4",
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
     "com.typesafe.akka" %% "akka-contrib" % akkaVersion,
-    "com.typesafe.akka" %% "akka-remote" % akkaVersion,
     "com.typesafe.akka" %% "akka-http-core-experimental" % akkaHttpVersion,
     "com.typesafe.akka" %% "akka-http-experimental" % akkaHttpVersion,
-    "com.typesafe.akka" %% "akka-http-jackson-experimental" % akkaHttpVersion,
     "com.typesafe.akka" %% "akka-http-xml-experimental" % akkaHttpVersion,
-    "com.typesafe.akka" %% "akka-http-testkit-experimental" % akkaHttpVersion % "test",
-    "com.typesafe.akka" %% "akka-multi-node-testkit" % akkaVersion,
-    "org.scalatest" %% "scalatest" % "2.2.5"
+    "org.scala-lang.modules" %% "scala-xml" % "1.0.4"
   )
 }
 
