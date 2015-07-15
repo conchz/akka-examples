@@ -1,4 +1,3 @@
-*.class
 *.log
 # sbt specific
 .cache
@@ -17,4 +16,4 @@ project/plugins/project/
 .idea/
 
 # IntelliJ
-target/
+*target/
