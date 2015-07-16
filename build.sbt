@@ -36,6 +36,17 @@ lazy val commonSettings = Seq(
 
   ivyScala := ivyScala.value map {
     _.copy(overrideScalaVersion = true)
+  },
+
+  unmanagedSourceDirectories in Compile <<= baseDirectory { base =>
+    Seq(
+      base / "src/main/scala"
+    )
+  },
+  unmanagedSourceDirectories in Test <<= baseDirectory { base =>
+    Seq(
+      base / "src/test/scala"
+    )
   }
 )
 
