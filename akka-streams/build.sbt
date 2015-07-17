@@ -1,4 +1,4 @@
-name := "akka-http"
+name := "akka-streams"
 
 libraryDependencies ++= {
   val akkaHttpVersion = "1.0"
