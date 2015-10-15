@@ -24,7 +24,7 @@ lazy val commonSettings = Seq(
   ),
 
   libraryDependencies ++= {
-    val akkaVersion = "2.3.14"
+    val akkaVersion = "2.4.0"
     Seq(
       "com.typesafe" % "config" % "1.3.0",
       "com.typesafe.akka" %% "akka-actor" % akkaVersion,
