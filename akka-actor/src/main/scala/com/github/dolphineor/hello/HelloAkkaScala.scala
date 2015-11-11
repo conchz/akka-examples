@@ -1,4 +1,4 @@
-package com.github.dolphineor
+package com.github.dolphineor.hello
 
 import akka.actor.{Actor, ActorRef, ActorSystem, Inbox, Props}
 

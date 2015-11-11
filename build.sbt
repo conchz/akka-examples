@@ -1,18 +1,19 @@
 lazy val commonSettings = Seq(
   name := "akka-examples",
-  version := "1.0-snapshot",
-  scalaVersion := "2.11.7",
+  version := "0.1.0-SNAPSHOT",
   organization := "com.github.dolphineor",
+
+  scalaVersion := "2.11.7",
+
+  scalacOptions ++= Seq(
+    "-encoding", "UTF-8",
+    "-unchecked"
+  ),
 
   javacOptions ++= Seq(
     "-source", "1.8",
     "-target", "1.8",
     "-Xlint:unchecked"
-  ),
-
-  scalacOptions ++= Seq(
-    "-encoding", "UTF-8",
-    "-unchecked"
   ),
 
   resolvers ++= Seq(
@@ -30,7 +31,9 @@ lazy val commonSettings = Seq(
       "com.typesafe.akka" %% "akka-actor" % akkaVersion,
       "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
       "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
-      "org.scala-lang.modules" %% "scala-xml" % "1.0.4"
+      "org.scala-lang.modules" %% "scala-xml" % "1.0.4",
+      "org.scalaz" %% "scalaz-core" % "7.1.5",
+      "org.scalatest" %% "scalatest" % "2.2.5" % "test"
     )
   },
 
