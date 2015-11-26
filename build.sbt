@@ -1,11 +1,9 @@
 import sbt._
 
-val logBackVersion = "1.1.3"
-val slickVersion = "3.1.0"
 val akkaVersion = "2.3.14"
 val akkaHttpVersion = "2.0-M1"
 
-val logBackClassic = "ch.qos.logback" % "logback-classic" % logBackVersion
+val logBackClassic = "ch.qos.logback" % "logback-classic" % "1.1.3"
 val akkaSlf4j = "com.typesafe.akka" %% "akka-slf4j" % akkaVersion
 val logStack = Seq(logBackClassic, akkaSlf4j)
 
