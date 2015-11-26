@@ -5,10 +5,13 @@ import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.Source
 
 /**
- * Created by dolphineor on 2015-7-15.
+ * Created on 2015-07-15.
+ *
+ * @author dolphineor
  */
 object BasicTransformation {
-  def main(args: Array[String]) {
+
+  def main(args: Array[String]): Unit = {
     implicit val system = ActorSystem("Sys")
     import system.dispatcher
 

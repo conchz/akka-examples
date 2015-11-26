@@ -6,14 +6,16 @@ import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
 import akka.stream.io.Framing
 import akka.stream.scaladsl._
-import akka.stream.stage.{Context, StatefulStage, SyncDirective}
 import akka.util.ByteString
 
 /**
- * Created by dolphineor on 2015-7-15.
+ * Created on 2015-07-15.
+ *
+ * @author dolphineor
  */
 object GroupLogFile {
-  def main(args: Array[String]) {
+
+  def main(args: Array[String]): Unit = {
     // actor system and implicit materializer
     implicit val system = ActorSystem("Sys")
     implicit val materializer = ActorMaterializer()
@@ -42,7 +44,7 @@ object GroupLogFile {
         groupFlow.map(line => ByteString(line + "\n")).runWith(Sink.synchronousFile(new File(s"target/log-$level.txt")))
     }.
       runWith(Sink.onComplete { _ =>
-      system.shutdown()
-    })
+        system.shutdown()
+      })
   }
 }

@@ -1,15 +1,16 @@
 package com.github.dolphineor.streams
 
 import akka.actor.ActorSystem
-import akka.pattern.ask
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.{Flow, Sink, Source, Tcp}
 import akka.util.ByteString
-import scala.concurrent.duration._
+
 import scala.util.{Failure, Success}
 
 /**
- * Created by dolphineor on 2015-7-15.
+ * Created on 2015-07-15.
+ *
+ * @author dolphineor
  */
 object TcpEcho {
   /**
@@ -22,7 +23,7 @@ object TcpEcho {
    * server on 127.0.0.1:6001.
    *
    */
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     if (args.isEmpty) {
       val system = ActorSystem("ClientAndServer")
       val (address, port) = ("127.0.0.1", 6000)
@@ -76,8 +77,8 @@ object TcpEcho {
       runFold(ByteString.empty) { (acc, in) ⇒ acc ++ in }
 
     result.onComplete {
-      case Success(result) =>
-        println(s"Result: " + result.utf8String)
+      case Success(r) =>
+        println(s"Result: " + r.utf8String)
         println("Shutting down client")
         system.shutdown()
       case Failure(e) =>

@@ -1,8 +1,9 @@
-//package com.github.dolphineor.pi
+//package com.github.dolphineor.actor.pi
 //
 //import akka.actor._
 //
 //import scala.concurrent.duration._
+//
 //
 //sealed trait PiMessage
 //
@@ -15,10 +16,13 @@
 //case class PiApproximation(pi: Double, duration: Duration)
 //
 ///**
-// * Created by dolphineor on 2015-11-11.
+// * Created on 2015-11-11.
+// *
+// * @author dolphineor
 // */
 //object PI {
-//  def main(args: Array[String]) {
+//
+//  def main(args: Array[String]): Unit = {
 //    calculate(nrOfWorkers = 4, nrOfElements = 10000, nrOfMessages = 10000)
 //
 //    def calculate(nrOfWorkers: Int, nrOfElements: Int, nrOfMessages: Int) {
@@ -33,7 +37,7 @@
 //  }
 //}
 //
-////计算PI值
+//// 计算PI值
 //class Worker extends Actor {
 //  def calculatePiFor(start: Int, nrOfElements: Int): Double = {
 //    var acc = 0.0
@@ -48,13 +52,13 @@
 //  }
 //}
 //
-////主Actor
+//// 主Actor
 //class Master(nrOfWorkers: Int, nrOfMessages: Int, nrOfElements: Int, listener: ActorRef)
 //  extends Actor {
 //  var pi: Double = _
 //  var nrOfResults: Int = _
 //  val start: Long = System.currentTimeMillis
-//  //设置nrOfWorkers个Workder计算PI值
+//  // 设置nrOfWorkers个Workder计算PI值
 //  val workerRouter = context.actorOf(
 //    Props[Worker].withRouter(RoundRobinRouter(nrOfWorkers)), name = "workerRouter")
 //
@@ -71,7 +75,7 @@
 //  }
 //}
 //
-////监听作用的Actor，记录打印
+//// 监听作用的Actor, 记录打印
 //class Listener extends Actor {
 //  def receive = {
 //    case PiApproximation(pi, duration) ⇒

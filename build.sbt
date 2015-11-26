@@ -1,6 +1,6 @@
 import sbt._
 
-val akkaVersion = "2.3.14"
+val akkaVersion = "2.3.12"
 val akkaHttpVersion = "2.0-M1"
 
 val logBackClassic = "ch.qos.logback" % "logback-classic" % "1.1.3"
@@ -15,16 +15,13 @@ val akkaCluster = "com.typesafe.akka" %% "akka-cluster" % akkaVersion
 val akkaStack = Seq(akkaActor, akkaCluster)
 
 val akkaHttp = "com.typesafe.akka" %% "akka-http-experimental" % akkaHttpVersion
-val akkaHttpXml = "com.typesafe.akka" %% "akka-http-xml-experimental" % akkaHttpVersion
 val akkaHttpTestkit = "com.typesafe.akka" %% "akka-http-testkit-experimental" % akkaHttpVersion % "test"
-val akkaHttpStack = Seq(akkaHttp, akkaHttpXml, akkaHttpTestkit)
+val akkaHttpStack = Seq(akkaHttp, akkaHttpTestkit)
 
 val commonDependencies = unitTestStack ++ logStack
 
 val json4sJackson = "org.json4s" %% "json4s-jackson" % "3.3.0"
 val scalaz = "org.scalaz" %% "scalaz-core" % "7.1.5"
-val scalaXml = "org.scala-lang.modules" %% "scala-xml" % "1.0.5"
-val typesafeConfig = "com.typesafe" % "config" % "1.3.0"
 
 
 lazy val commonSettings = Seq(
@@ -58,7 +55,7 @@ lazy val commonSettings = Seq(
     "sbt-plugin repository" at "https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/"
   ),
 
-  libraryDependencies ++= commonDependencies ++ Seq(json4sJackson, scalaz, scalaXml, typesafeConfig)
+  libraryDependencies ++= commonDependencies ++ Seq(json4sJackson, scalaz)
 )
 
 lazy val root = (project in file("."))

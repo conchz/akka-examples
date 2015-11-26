@@ -1,11 +1,13 @@
-package com.github.dolphineor.hello
+package com.github.dolphineor.actor.hello
 
 import akka.actor.{Actor, ActorRef, ActorSystem, Inbox, Props}
 
 import scala.concurrent.duration._
 
 /**
- * Created by dolphineor on 2015-7-15.
+ * Created on 2015-07-15.
+ *
+ * @author dolphineor
  */
 case object Greet
 
@@ -23,9 +25,10 @@ class Greeter extends Actor {
 }
 
 object HelloAkkaScala {
-  def main(args: Array[String]) {
-    // Create the 'helloakka' actor system
-    val system = ActorSystem("hello-akka")
+
+  def main(args: Array[String]): Unit = {
+    // Create the 'helloAkka' actor system
+    val system = ActorSystem("Hello-Akka")
 
     // Create the 'greeter' actor
     val greeter = system.actorOf(Props[Greeter], "greeter")
@@ -51,13 +54,13 @@ object HelloAkkaScala {
     println(s"Greeting: $message2")
 
     val greetPrinter = system.actorOf(Props[GreetPrinter])
-    // after zero seconds, send a Greet message every second to the greeter with a sender of the greetPrinter
+    // After zero seconds, send a Greet message every second to the greeter with a sender of the greetPrinter
     system.scheduler.schedule(0.seconds, 1.second, greeter, Greet)(system.dispatcher, greetPrinter)
 
   }
 }
 
-// prints a greeting
+// Print a greeting
 class GreetPrinter extends Actor {
   def receive = {
     case Greeting(message) => println(message)
