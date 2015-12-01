@@ -1,7 +1,7 @@
 import sbt._
 
 val akkaVersion = "2.3.12"
-val akkaHttpVersion = "2.0-M1"
+val akkaHttpVersion = "2.0-M2"
 
 val logBackClassic = "ch.qos.logback" % "logback-classic" % "1.1.3"
 val akkaSlf4j = "com.typesafe.akka" %% "akka-slf4j" % akkaVersion
